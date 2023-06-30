@@ -8,14 +8,59 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        NavigationStack {
+            
+            VStack(spacing: 100){
+                
+                Text("[Let's Play a game of would you rather! Choose a category...]")
+                    .font(.largeTitle)
+                    .fontWeight(.thin)
+                    .multilineTextAlignment(.center)
+                
+                    .padding()
+                
+                
+                VStack(spacing: 100){
+                    
+                    NavigationLink(destination: _QuestionOne()) {
+                        
+                        Text("Destinations")
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.blue)
+    
+                    }
+                    
+                    NavigationLink(destination: QuestionTwo()) {
+                        
+                        Text("Food")
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.orange)
+                    }
+                    
+                    NavigationLink(destination: QuestionThree()) {
+                        
+                        Text("Hobbies")
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.purple)
+                    }
+                    
+                    
+                }
+                
+            }
+            
+            
+            
+            
         }
-        .padding()
+
     }
 }
 
